@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Age calculator app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link rel="stylesheet" href="./Css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form class="form-date">
+        <div class="age">
+          <div class="day">
+            <label for="day" class="label" id="label-day">Day</label>
+            <input
+              class="input"
+              type="number"
+              name="day"
+              id="day"
+              placeholder="DD"
+            />
+            <p class="error-text hidden">This field is required</p>
+            <p class="error-day hidden">Must be a valid day</p>
+          </div>
+          <div class="month">
+            <label for="month" class="label" id="label-month">Month</label>
+            <input
+              class="input"
+              type="number"
+              name="month"
+              id="month"
+              placeholder="MM"
+            />
+            <p class="error-text hidden">This field is required</p>
+            <p class="error-month hidden">Must be a valid month</p>
+          </div>
+          <div class="year">
+            <label for="year" class="label" id="label-year">Year</label>
+            <input
+              class="input"
+              type="number"
+              name="year"
+              id="year"
+              placeholder="YYYY"
+            />
+            <p class="error-text hidden">This field is required</p>
+            <p class="error-year hidden">Must be in the past</p>
+          </div>
+        </div>
+        <button class="logo" type="submit">
+          <img src="./assets/images/icon-arrow.svg" alt="arrow-img" />
+        </button>
+
+        <!-- <div class="underline">
+          <div class="logo">
+            <img src="./assets/images/icon-arrow.svg" alt="arrow-img" />
+          </div>
+        </div> -->
+      </form>
+      <!-- <button type="submit" class="submit">Calculate</button> -->
+
+      <div class="result">
+        <h1><span class="num" id="no-of-years"> --</span>years</h1>
+        <h1><span class="num" id="no-of-months"> --</span>months</h1>
+        <h1><span class="num" id="no-of-days"> --</span>days</h1>
+      </div>
+    </div>
+
+    <!-- Javascript link -->
+    <script src="./Js/script.js"></script>
+  </body>
+</html>
