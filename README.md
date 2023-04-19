@@ -21,13 +21,12 @@ Your users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: https://github.com/chidinma1234/age-calculator-app
+- Live Site URL: https://chidinma1234.github.io/age-calculator-app/
 
 ### Built with
 
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- Mobile-first workflow
 - Vanilla Javascript
