@@ -115,9 +115,7 @@ form {
   font-size: 1.15rem;
   font-weight: 800i;
 }
-.num {
-  color: var(--Purple);
-}
+
 .error-text {
   color: var(--Light-red);
   font-size: 0.5rem;
@@ -138,6 +136,20 @@ form {
 
 .label-error {
   color: hsl(0, 100%, 67%);
+}
+@keyframes count-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.num {
+  color: var(--Purple);
+  animation: count-up 1s ease-out;
 }
 
 @media (min-width: 1024px) {
