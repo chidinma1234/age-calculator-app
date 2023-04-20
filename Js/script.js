@@ -41,7 +41,7 @@ function toCalcAgeMnthsDays(now, past) {
   years.textContent = `${noOfYears}`.padStart(2, 0);
   const noOfMonths = Math.abs(now.getMonth() - past.getMonth());
   months.textContent = `${noOfMonths}`.padStart(2, 0);
-  const noOfDays = Math.abs(now.getDate() - past.getDate());
+  const noOfDays = Math.floor(Math.abs(now.getDate() - past.getDate()));
   days.textContent = `${noOfDays}`.padStart(2, 0);
 }
 
@@ -87,11 +87,11 @@ form.addEventListener('submit', (e) => {
       resetErrorColor(inputMnth);
       resetErrorColor(inputYear);
     }, 3000);
-    return;
+    // return;
   }
 
   //check that the number of month is within 1-12
-  else if (month < 0 || month > 11) {
+  if (month < 0 || month > 11) {
     errorMonth.classList.remove('hidden');
     showErrorColor(inputMnth);
     showErrorColor(inputDay);
@@ -103,7 +103,7 @@ form.addEventListener('submit', (e) => {
       resetErrorColor(inputDay);
       resetErrorColor(inputYear);
     }, 3000);
-    return;
+    // return;
   }
   if (year > currentDate.getFullYear()) {
     errorYear.classList.remove('hidden');
@@ -116,11 +116,18 @@ form.addEventListener('submit', (e) => {
       resetErrorColor(inputDay);
       resetErrorColor(inputYear);
     }, 3000);
-    return;
+    // return;
   }
 
   const birthDate = new Date(year, month, date);
-  toCalcAgeMnthsDays(currentDate, birthDate);
+  if (
+    currentDate.getFullYear() > year &&
+    (month > 0 || month < 11) &&
+    date >= 1 &&
+    date <= maxDate
+  ) {
+    toCalcAgeMnthsDays(currentDate, birthDate);
+  }
 
   //setting back to default
   inputDay.value = '';
